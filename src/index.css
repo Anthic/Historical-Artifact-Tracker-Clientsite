@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui";
+.active {
+  background-color: #5ee9b4;
+  color: white;
+}
+.active:hover {
+  background-color: #4cd89f;
+}
+.active:active {
+  background-color: #4cd89f;
+}
+.active:focus {
+  background-color: #4cd89f;
+}

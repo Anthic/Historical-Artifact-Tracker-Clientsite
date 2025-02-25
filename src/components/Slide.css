@@ -1,0 +1,64 @@
+/* Slide.css */
+.historic-swiper {
+  --swiper-theme-color: #6ee7b7;
+  --swiper-navigation-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.historic-swiper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.historic-swiper .swiper-slide {
+  width: 100% !important;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.historic-swiper .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.historic-swiper .swiper-pagination-bullet-active {
+  background: #6ee7b7;
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.historic-swiper .swiper-button-next,
+.historic-swiper .swiper-button-prev {
+  background: rgba(0,0,0,0.3);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.historic-swiper .swiper-button-next:hover,
+.historic-swiper .swiper-button-prev:hover {
+  background: rgba(0,0,0,0.6);
+  transform: scale(1.1);
+}
+
+.historic-swiper .swiper-button-next::after,
+.historic-swiper .swiper-button-prev::after {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .historic-swiper .swiper-button-next,
+  .historic-swiper .swiper-button-prev {
+    display: none;
+  }
+}

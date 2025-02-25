@@ -22,10 +22,9 @@ const AllArtifacts = () => {
 
       // Encode the search term to handle special characters
       const encodedSearchTerm = encodeURIComponent(searchTerm.trim());
-      console.log("Searching for:", encodedSearchTerm);
 
       const response = await fetch(
-        `http://localhost:20112/artifacts/search?name=${encodedSearchTerm}`
+        `https://historical-artifacts-tracker-serversite.vercel.app/artifacts/search?name=${encodedSearchTerm}`
       );
 
       const data = await response.json();
@@ -34,7 +33,6 @@ const AllArtifacts = () => {
         throw new Error(data.error || "Failed to search artifacts");
       }
 
-      console.log("Search results:", data);
       setArtifacts(data);
 
       if (data.length === 0) {

@@ -14,19 +14,16 @@ const LikedArtifacts = () => {
     const fetchLikedArtifacts = async () => {
       try {
         if (!user?.uid) {
-          console.log("No user ID found:", user);
           return;
         }
 
-        console.log("Fetching liked artifacts for user:", user.uid);
         const response = await fetch(
-          `http://localhost:20112/liked-artifacts/${user.uid}`
+          `https://historical-artifacts-tracker-serversite.vercel.app/liked-artifacts/${user.uid}`
         );
         const data = await response.json();
 
         if (response.ok) {
           setLikedArtifacts(Array.isArray(data) ? data : []);
-          console.log("Fetched liked artifacts:", data);
         } else {
           throw new Error(data.error || "Failed to fetch liked artifacts");
         }

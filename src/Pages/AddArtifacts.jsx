@@ -44,11 +44,14 @@ const AddArtifacts = () => {
         },
       };
 
-      const response = await fetch("http://localhost:20112/artifacts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(artifactData),
-      });
+      const response = await fetch(
+        "https://historical-artifacts-tracker-serversite.vercel.app/artifacts",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(artifactData),
+        }
+      );
 
       // Handle non-JSON responses
       const contentType = response.headers.get("content-type");

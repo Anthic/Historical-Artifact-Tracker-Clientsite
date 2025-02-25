@@ -11,7 +11,7 @@ const Home = () => {
     const fetchTopArtifacts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:20112/artifacts/top-liked"
+          "https://historical-artifacts-tracker-serversite.vercel.app/artifacts/top-liked"
         );
         const data = await response.json();
 

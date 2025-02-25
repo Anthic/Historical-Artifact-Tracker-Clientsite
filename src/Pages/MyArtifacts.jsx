@@ -31,20 +31,16 @@ const MyArtifacts = () => {
     const fetchArtifacts = async () => {
       try {
         if (!user?.uid) {
-          console.log("No user ID found:", user);
           return;
         }
 
-        console.log("Fetching artifacts for user:", user.uid); // For debugging
-
         const response = await fetch(
-          `http://localhost:20112/my-artifacts/${user.uid}`
+          `https://historical-artifacts-tracker-serversite.vercel.app/my-artifacts/${user.uid}`
         );
         const data = await response.json();
 
         if (response.ok) {
           setArtifacts(Array.isArray(data) ? data : []);
-          console.log("Fetched artifacts:", data);
         } else {
           throw new Error(data.error || "Failed to fetch artifacts");
         }
@@ -71,7 +67,7 @@ const MyArtifacts = () => {
       const updateData = Object.fromEntries(formData.entries());
 
       const response = await fetch(
-        `http://localhost:20112/artifacts/${selectedArtifact._id}`,
+        `https://historical-artifacts-tracker-serversite.vercel.app/artifacts/${selectedArtifact._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -113,7 +109,7 @@ const MyArtifacts = () => {
     if (result.isConfirmed) {
       try {
         const response = await fetch(
-          `http://localhost:20112/artifacts/${artifactId}`,
+          `https://historical-artifacts-tracker-serversite.vercel.app/artifacts/${artifactId}`,
           {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },

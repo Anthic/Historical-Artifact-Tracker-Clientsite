@@ -22,7 +22,10 @@ const Router = createBrowserRouter([
       {
         path: "AllArtifacts",
         element: <AllArtifacts></AllArtifacts>,
-        loader: () => fetch("http://localhost:20112/artifacts"),
+        loader: () =>
+          fetch(
+            "https://historical-artifacts-tracker-serversite.vercel.app/artifacts"
+          ),
       },
       {
         path: "artifact/:id",
@@ -32,9 +35,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:20112/artifacts/${params.id}`).then((res) =>
-            res.json()
-          ),
+          fetch(
+            `https://historical-artifacts-tracker-serversite.vercel.app/artifacts/${params.id}`
+          ).then((res) => res.json()),
       },
       {
         path: "AddArtifacts",

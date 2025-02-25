@@ -21,7 +21,7 @@ const ArtifactDetails = () => {
     try {
       setIsLiking(true);
       const response = await fetch(
-        `http://localhost:20112/artifacts/${artifact._id}/like`,
+        `https://historical-artifacts-tracker-serversite.vercel.app/artifacts/${artifact._id}/like`,
         {
           method: "PUT",
           headers: {
